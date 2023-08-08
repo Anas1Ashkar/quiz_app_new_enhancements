@@ -17,9 +17,9 @@ class _HomePageState extends State<HomePage> {
 
   List correctAnswers = [
     'football',
-    'black',
-    'cheetah',
-    'Messi',
+    'winter',
+    'telegram',
+    'gaming',
   ];
 
   List chosenAnswers = [];
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
           },
           {
             'title': 'football',
-            'icon': Icons.sports_football,
+            'icon': Icons.sports_soccer,
           },
           {
             'title': 'volleyball',
@@ -46,65 +46,65 @@ class _HomePageState extends State<HomePage> {
         ],
     },
     {
-      'question': 'What is the most beautiful color ?',
+      'question': 'What is the best season of the year?',
       'answers': [
         {
-          'title': 'red',
-          'icon': Icons.sports_football,
+          'title': 'autumn',
+          'icon': Icons.cloud,
           },
           {
-            'title': 'blue',
-            'icon': Icons.sports_football,
+            'title': 'winter',
+            'icon': Icons.ac_unit,
           },
           {
-            'title': 'black',
-            'icon': Icons.sports_volleyball,
+            'title': 'spring',
+            'icon': Icons.terrain_rounded,
           },
           {
-            'title': 'green',
-            'icon': Icons.sports_tennis,
+            'title': 'summer',
+            'icon': Icons.sunny,
           },
         ],
     },
     {
-      'question': 'What is the fastest animal ?',
+      'question': 'What is the best social media app?',
       'answers': [
         {
-          'title': 'horse',
-          'icon': Icons.sports_football,
+          'title': 'facebook',
+          'icon': Icons.facebook,
           },
           {
-            'title': 'turtle',
-            'icon': Icons.sports_football,
+            'title': 'snapchat',
+            'icon': Icons.snapchat,
           },
           {
-            'title': 'cheetah',
-            'icon': Icons.sports_volleyball,
+            'title': 'telegram',
+            'icon': Icons.telegram,
           },
           {
-            'title': 'dog',
-            'icon': Icons.sports_tennis,
+            'title': 'whatsapp',
+            'icon': Icons.messenger,
           },
         ],
     },
     {
-      'question': 'Who is the best player? You\'re right, he is Messi',
+      'question': 'What is your favorite entertainment?',
       'answers': [
         {
-          'title': 'messi',
-          'icon': Icons.sports_football,
+          'title': 'laptop',
+          'icon': Icons.laptop,
           },
           {
-            'title': 'messi',
-            'icon': Icons.sports_football,
+            'title': 'phone',
+            'icon': Icons.phone_iphone,
           },
           {
-            'title': 'messi',
-            'icon': Icons.sports_volleyball,
+            'title': 'gaming',
+            'icon': Icons.sports_esports,
           },
           {
-            'title': 'messi',
-            'icon': Icons.sports_tennis,
+            'title': 'watching TV',
+            'icon': Icons.tv,
           },
         ],
     },
@@ -112,7 +112,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // final progress = questionIndex;
     final questionWithAnswer = questionsWithAnswers[questionIndex];
     final size = MediaQuery.of(context).size;
     return Scaffold(
@@ -229,7 +228,8 @@ class _HomePageState extends State<HomePage> {
                               if (yourChoiceIndex != null) {
                                 if (questionIndex < questionsWithAnswers.length - 1) {
                                   questionIndex++;
-                                } else {
+                                }
+                                else {
                                   for (int j = 0; j < chosenAnswers.length; j++) {
                                     if (chosenAnswers[j] == correctAnswers[j]) {
                                       result++;
@@ -238,7 +238,8 @@ class _HomePageState extends State<HomePage> {
                                   showResultsMessage = true;
                                 }
                                 yourChoiceIndex = null;
-                              } else {
+                              }
+                              else {
                                 ScaffoldMessenger.of(context)
                                     .showSnackBar(const SnackBar(
                                   content: Text('Choose an answer first'),
@@ -264,11 +265,11 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Congratulations!',
+                        const Text('Congratulations!',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 30,
-                                color: Colors.green.shade900)),
+                                color: Colors.black)),
                         const SizedBox(
                           height: 5,
                         ),
